@@ -1,13 +1,14 @@
 #install.packages("plyr")
 library(plyr)
 library(readr)
-data_file <- read.csv("D:/Tableau Learn/eCommerce Dataset/Preprocessed Data.csv") #notice it should be /, not \
+data_file <- read.csv("D:/Tableau (Github)/Overseas-Market-Strategy-in-e-Commerce/Datasets/Preprocessed Data.csv") #notice it should be /, not \
 
 df <- data.frame(data_file)
 df <- df[order(df$CustomerID),]  ##Sorted by CustomerID
 
 Cus_ID_Frq <- count(df, vars = "CustomerID")
 
+#Calculate Total Sales
 Total_Sal <- c()
 Cus_row <- as.integer(1)
 sum <- as.integer(0)
@@ -56,5 +57,5 @@ for (df2_row in c(1:nrow(df2))){
   }
 }
 df2 <- cbind(df2, Classification = Clf)
-View(df2)
-write.csv(df2, "D:/Tableau Learn/eCommerce Dataset/Customer Classification.csv")
+#View(df2)
+write.csv(df2, "D:/Tableau (Github)/Overseas-Market-Strategy-in-e-Commerce/Datasets/Customer Classification.csv")

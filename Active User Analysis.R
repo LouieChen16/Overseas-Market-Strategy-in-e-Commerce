@@ -1,6 +1,6 @@
 library(readr) ##To manage files
 library(lubridate)   ##To manage time
-data_file <- read.csv("D:/Tableau Learn/eCommerce Dataset/Active User Analysis (FR).csv") #notice it should be /, not \
+data_file <- read.csv("D:/Tableau (Github)/Overseas-Market-Strategy-in-e-Commerce/Active User Analysis (FR).csv") #notice it should be /, not \
 
 df <- data.frame(data_file)
 ##Transpose df
@@ -83,4 +83,4 @@ for (ro in c(2:nrow(df_T))){
 }
 df_T <- cbind(df_T, Count_of_New_Customer = New_Vec, Count_of_Returning_Customer = Re_Vec, Count_of_Lost_Customer = Lo_Vec)
 
-write.csv(df_T, "D:/Tableau Learn/eCommerce Dataset/Active User Analysis processed (FR).csv")
+write.csv(df_T, "D:/Tableau (Github)/Overseas-Market-Strategy-in-e-Commerce/Active User Analysis processed (FR).csv")
